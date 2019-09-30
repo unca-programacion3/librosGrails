@@ -22,7 +22,7 @@
             <f:display bean="libro" except="foto"/>
             <div class="fieldcontain">
                 <span id="foto-label" class="property-label">Foto</span>
-                <div class="property-value" aria-labelledby="foto-label"><img src="${libro.foto}"/></div>
+                <div class="property-value" aria-labelledby="foto-label"><asset:image src="${libro.foto}" alt="Portada Libro"/></div>
             </div>
             <g:form resource="${this.libro}" method="DELETE">
                 <fieldset class="buttons">

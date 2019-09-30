@@ -20,7 +20,7 @@
                       Busqueda de Libros por Titulo
                   </div>
                   <div class="panel-body">
-                      <form action="buscarLibros" method="POST">
+                      <form action="/libro/buscarLibros" method="POST">
                           <div class="row">
                               <div class="col-md-6">
                                     <label>Título</label>
@@ -30,7 +30,7 @@
                               <div class="col-md-12">
                                   <br />
                                   <button type="submit" class="btn btn-primary">
-                                      <span class="glyphicon glyphicon-search"></span>
+                                      
                                       Buscar
                                   </button>
                               </div>
