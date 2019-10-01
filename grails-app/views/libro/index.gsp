@@ -44,8 +44,26 @@
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
 
-
-            <f:table collection="${libroList}" />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Publicacion</th>
+                        <th>Autor</th>
+                        <th>Editorial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each in="${libroList}" status="i" var="libro">
+                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}"> <!-- Si la variable "i" de cada iteracion es par, class= 'even', sino class='odd'. Esto permite mostrar las filas con sombreado intercalado-->
+                            <td><g:link controller="libro" action="show" id="${libro.id}">${libro.titulo}</g:link></td>
+                            <td>${libro.publicacion}</td>
+                            <td><g:link controller="autor" action="show" id="${libro.autor.id}">${libro.autor.apellidoNombre}</g:link></td> <!-- el Nombre del autor es un link que lleva a la pagina show de Autor--> 
+                            <td>${libro.editorial}</td>
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
 
             <div class="pagination">
                 <g:paginate total="${libroCount ?: 0}" />
